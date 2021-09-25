@@ -17,11 +17,11 @@ class ECharts extends Component {
   };
 
   static defaultProps = {
-    onData: () => {},
+    onData: () => { },
     legacyMode: false,
     canvas: false,
-    onLoadEnd: () => {},
-    backgroundColor: "rgba(0, 0, 0, 0)"
+    onLoadEnd: () => { },
+    backgroundColor: "rgba(0, 0, 0, 1)"
   };
 
   constructor(props) {
@@ -41,12 +41,12 @@ class ECharts extends Component {
                 width: 100%;
                 margin: 0;
                 padding: 0;
-                background-color:rgba(0, 0, 0, 0);
+                background-color:${props.backgroundColor};
                 }
                 #main {
                 height: 100%;
                 width: 100%;
-                background-color:rgba(0, 0, 0, 0);
+                background-color:${props.backgroundColor};
                 }
             </style>
             
@@ -168,6 +168,7 @@ class ECharts extends Component {
           allowUniversalAccessFromFileURLs
           mixedContentMode="always"
           onLoadEnd={this.onLoadEnd}
+          style={{ backgroundColor: this.props.backgroundColor }}
         />
       </View>
     );
